@@ -9,6 +9,10 @@
 
 # 공유하고 싶은 것
 
+- /pages/api 폴더 삭제 -> app/api 로 이동
+- [react docs beta 버전](https://react.dev/learn/start-a-new-react-project)
+  - CRA is dead..?
+  - CNA 가 표준..?
 - npx create-next-app@latest --example [my-app]
 - [글래스모피즘 UI](https://ldrerin.tistory.com/479)
 - 서버 컴포넌트
