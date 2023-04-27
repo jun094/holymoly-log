@@ -1,4 +1,6 @@
-import './globals.css';
+import Header from 'ui/Header';
+import Navigation from 'ui/Navigation';
+import PageLayout from 'ui/PageLayout';
 
 export default function RootLayout({
   children,
@@ -12,7 +14,14 @@ export default function RootLayout({
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body style={{ border: '3px solid red' }}>{children}</body>
+      <body>
+        <PageLayout>
+          <Header />
+          <Navigation />
+
+          {children}
+        </PageLayout>
+      </body>
     </html>
   );
 }
