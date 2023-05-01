@@ -1,7 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import Flex from 'ui/Flex';
 
 import { NavigationList, NavigationItem } from './styles';
 
@@ -9,15 +8,10 @@ type NavigationProps = {};
 
 function Navigation({}: NavigationProps) {
   return (
-    <NavigationList as="ul" alignItems='center' justifyContent='center'>
+    <NavigationList as="ul" alignItems="center" justifyContent="center">
       <NavigationItem as="li">
-        <Link href={`/csr`}>
-          <h6>CSR</h6>
-        </Link>
-      </NavigationItem>
-      <NavigationItem as="li">
-        <Link href={`/ssr`}>
-          <h6>SSR</h6>
+        <Link href={`/`}>
+          <h6>HOME</h6>
         </Link>
       </NavigationItem>
       <NavigationItem as="li">
