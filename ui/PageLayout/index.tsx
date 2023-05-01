@@ -11,10 +11,7 @@ function PageLayout({ children }: { children: React.ReactNode }) {
       <Global styles={style} />
       <BgVideoContainer>
         <BgVideo muted autoPlay loop>
-          <source
-            src="/assets/video/macos-big-sur-1280x720-dark.mp4"
-            type="video/mp4"
-          />
+          <source src="/assets/video/macos-big-sur-1280x720-dark.mp4" type="video/mp4" />
         </BgVideo>
       </BgVideoContainer>
 
