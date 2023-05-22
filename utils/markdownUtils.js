@@ -5,8 +5,10 @@ const path = require('path');
 const yaml = require('js-yaml');
 const MarkdownIt = require('markdown-it');
 
-function convertMarkdownToJson(filepath) {
-  const markdown = fs.readFileSync(path.resolve(filepath), 'utf-8');
+const DIRECTORY = './contents';
+
+function convertMarkdownToJson(file) {
+  const markdown = fs.readFileSync(path.resolve(`${DIRECTORY}/${file}`), 'utf-8');
 
   // YAML Front Matter와 Markdown 본문을 분리합니다.
   const [frontmatterString, markdownString] = markdown.split('---\n').slice(1);
@@ -35,7 +37,15 @@ const contentsToArray = string => {
   return arr;
 };
 
+function getAllContents() {
+  const files = fs.readdirSync(path.resolve(DIRECTORY));
+  const data = files.map(file => convertMarkdownToJson(file));
+
+  return data;
+}
+
 module.exports = {
   convertMarkdownToJson,
   contentsToArray,
+  getAllContents,
 };
