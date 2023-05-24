@@ -1,25 +1,21 @@
-type TodoType = {
-  userId: number;
-  id: number;
-  title: string;
-  completed: boolean;
-};
+import { API_URL } from 'constants/index';
+import { UserType } from 'types/index.types';
 
-const fetchTodo = async () => {
-  const res = await fetch(`https://jsonplaceholder.typicode.com/todos`, { cache: 'force-cache' });
-  const todo: TodoType[] = await res.json();
-  return todo;
+const fetchContents = async () => {
+  const res = await fetch(API_URL, { cache: 'force-cache' });
+  const contents: any = await res.json();
+  return contents;
 };
 
 async function Ssg() {
-  const todo = await fetchTodo();
+  const contents = await fetchContents();
 
   return (
     <div>
-      ssg 페이지입니다.
+      <h1>SSG 페이지입니다.</h1>
       <ul>
-        {todo.map(({ id, title }: any) => (
-          <h4 key={id}>{title}</h4>
+        {contents.map(({ name }: any) => (
+          <h4 key={name}>{name}</h4>
         ))}
       </ul>
     </div>

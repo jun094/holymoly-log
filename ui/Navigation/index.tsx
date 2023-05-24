@@ -15,6 +15,11 @@ function Navigation({}: NavigationProps) {
         </Link>
       </NavigationItem>
       <NavigationItem as="li">
+        <Link href={`/ssr`}>
+          <h6>SSR</h6>
+        </Link>
+      </NavigationItem>
+      <NavigationItem as="li">
         <Link href={`/ssg`}>
           <h6>SSG</h6>
         </Link>
